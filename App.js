@@ -30,12 +30,15 @@ function render() {
     .then((response) => response.json())
     .then((data) => {
       const colors = data.colors;
+
       let hexColor = "";
       colors.map((color) => {
         hexColor = color.hex.value;
+
         colorsHtml += `<div><div class="color-block" style="background:${hexColor}"
-         data-color="${hexColor}" onclick="copyColor(this.dataset.color)"></div>
-         <p class="color-hex">${hexColor}</p></div>`;
+         data-color="${hexColor}" onclick="copyColor(this.dataset.color)">${hexColor}</div>
+         <p class="color-hex name" style="color:${hexColor}">${color.name.value}</p>
+         </div>`;
       });
       colorsContainer.innerHTML = colorsHtml;
       document.querySelector("h1").style.color = hexColor;
@@ -44,7 +47,6 @@ function render() {
 
 function copyColor(color) {
   navigator.clipboard.writeText(color);
-
   document.getElementById(
     "message"
   ).textContent = `Copied to clipboard color ${color}`;
