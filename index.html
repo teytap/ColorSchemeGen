@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- style -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Color Scheme Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Color Scheme Generator</h1>
+    </header>
+    <main>
+      <form action="" id="color-form">
+        <input type="color" id="color-input" value="#E41111" />
+        <select name="choose-mode" id="mode-input">
+          <!-- <option value="">--Choose mode--</option> -->
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome-dark</option>
+          <option value="monochrome-light">Monochrome-light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic-complement</option>
+          <option value="triad">Triad</option>
+        </select>
+        <button id="get-colors-btn" type="submit">Get colors</button>
+      </form>
+      <div id="colors-container"></div>
+    </main>
+    <div id="message"></div>
+    <script src="App.js"></script>
+  </body>
+</html>
