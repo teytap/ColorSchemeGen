@@ -6,11 +6,6 @@ const colorsContainer = document.getElementById("colors-container");
 
 let mode = modeInput.value;
 let seedColor = colorInput.value.substring(1);
-// document.addEventListener("click", function (e) {
-//   if ((e.target.id = dataset.color)) {
-//     console.log("done");
-//   }
-// });
 
 colorInput.addEventListener("change", (e) => {
   seedColor = e.target.value.substring(1);
@@ -37,7 +32,7 @@ function render() {
 
         colorsHtml += `<div><div class="color-block" style="background:${hexColor}"
          data-color="${hexColor}" onclick="copyColor(this.dataset.color)">${hexColor}</div>
-         <p class="color-hex name" style="color:${hexColor}">${color.name.value}</p>
+         <p class="color-hex name" style="color:${color.name.closest_named_hex}">${color.name.value}</p>
          </div>`;
       });
       colorsContainer.innerHTML = colorsHtml;
